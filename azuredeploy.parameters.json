@@ -1,45 +1,113 @@
-
+{
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "subscriptionId": {
-            "value": "1acac7f4-5fb3-4274-aa7d-2bd99f979dad"
-        },
-        "name": {
-            "value": "acplarm"
-        },
         "location": {
-            "value": "East US"
+            "value": "centralindia"
         },
-        "hostingPlanName": {
-            "value": "ASP-adodemo-a1f6"
+        "networkInterfaceName1": {
+            "value": "ncplarmw2k670_z1"
         },
-        "serverFarmResourceGroup": {
+        "networkSecurityGroupName": {
+            "value": "ncplarmw2k-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "ncplarmw2k-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.0.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName1": {
+            "value": "ncplarmw2k-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Standard"
+        },
+        "pipDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineName": {
+            "value": "ncplarmw2k"
+        },
+        "virtualMachineName1": {
+            "value": "ncplarmw2k"
+        },
+        "virtualMachineComputerName1": {
+            "value": "ncplarmw2k"
+        },
+        "virtualMachineRG": {
             "value": "adodemo"
         },
-        "alwaysOn": {
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1s"
+        },
+        "nicDeleteOption": {
+            "value": "Delete"
+        },
+        "adminUsername": {
+            "value": "ncpladmin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "enableHotpatching": {
             "value": false
         },
-        "ftpsState": {
-            "value": "FtpsOnly"
+        "securityType": {
+            "value": "TrustedLaunch"
         },
-        "sku": {
-            "value": "Free"
+        "secureBoot": {
+            "value": true
         },
-        "skuCode": {
-            "value": "F1"
+        "vTPM": {
+            "value": true
         },
-        "numberOfWorkers": {
+        "virtualMachine1Zone": {
             "value": "1"
-        },
-        "workerSize": {
-            "value": "0"
-        },
-        "workerSizeId": {
-            "value": "0"
-        },
-        "linuxFxVersion": {
-            "value": "TOMCAT|9.0-jre8"
         }
     }
 }
